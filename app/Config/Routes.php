@@ -5,7 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+//$routes->get('/', 'Home::index');
+
+$routes->get('/', 'AuthController::index', ['as' => 'login']);
+$routes->post('/', 'AuthController::postLogin', ['as' => 'login.post']);
 
 $routes->get('/divisi', 'DivisiController::listDivisi', ['as' => 'divisi.list']);
 $routes->get('/divisi/add', 'DivisiController::formTambahDivisi', ['as' => 'divisi.add']);
