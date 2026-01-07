@@ -10,11 +10,17 @@ class DivisiController extends BaseController
 {
     protected $validation;
 
+    /**
+     * construct validation
+     */
     public function __construct()
     {
         $this->validation = \Config\Services::validation();
     }
 
+    /**
+     * menampilkan list divisi
+     */
     public function listDivisi()
     {
         // inisiasi model
@@ -30,6 +36,9 @@ class DivisiController extends BaseController
         ]);
     }
 
+    /**
+     * form tambah divisi
+     */
     public function formTambahDivisi()
     {
         return view('divisi/view_tambah_divisi', [
@@ -37,6 +46,9 @@ class DivisiController extends BaseController
         ]);
     }
 
+    /**
+     * proses tambah divisi
+     */
     public function postTambahDivisi()
     {
         $namaDivisi = $this->request->getPost('nama_divisi');
@@ -66,6 +78,9 @@ class DivisiController extends BaseController
         return redirect()->to(url_to('divisi.list'));
     }
 
+    /**
+     * form edit divisi
+     */
     public function formEditDivisi($id)
     {
         $modelDivisi = new ModelDivisi();
@@ -82,6 +97,9 @@ class DivisiController extends BaseController
         ]);
     }
 
+    /**
+     * proses edit divisi
+     */
     public function postEditDivisi()
     {
         $id = $this->request->getPost('id');
@@ -112,6 +130,22 @@ class DivisiController extends BaseController
         $modelDivisi->where('id', $id);
         if ($modelDivisi->update()) {
             session()->setFlashdata('pesan_sukses', 'Edit Divisi Berhasil');
+        }
+
+        return redirect()->to(url_to('divisi.list'));
+    }
+
+    /**
+     * proses delete divisi
+     */
+    public function deleteDivisi()
+    {
+        $id = $this->request->getGet('id');
+
+        $modelDivisi = new ModelDivisi();
+
+        if ($modelDivisi->delete($id)) {
+            session()->setFlashdata('pesan_sukses', 'Delete Divisi Berhasil');
         }
 
         return redirect()->to(url_to('divisi.list'));

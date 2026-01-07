@@ -6,7 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
-    
+    <?= $this->renderSection('css') ?>
 </head>
 <body>
 
@@ -35,5 +35,6 @@
             });
         }
     </script>
+    <?= $this->renderSection('js') ?>
 </body>
 </html>

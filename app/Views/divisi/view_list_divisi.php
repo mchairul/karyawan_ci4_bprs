@@ -25,7 +25,7 @@
                 <td>
                     <a href="<?= url_to('divisi.edit', $divisi->id) ?>"
                         class="btn btn-warning btn-sm">Edit</a>
-                    <button class="btn btn-danger btn-sm">Delete</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteDivisi('<?= $divisi->id ?>')">Delete</button>
                 </td>
             </tr>
             <?php endforeach ?>
@@ -33,5 +33,27 @@
         </table>
     </div>
 </div>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+
+<script>
+    function deleteDivisi(id) {
+        Swal.fire({
+            title: "Apakah anda yakin?",
+            text: "untuk menghapus divisi ini!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, hapus"
+        }).then((result) => {
+            if (result.isConfirmed) {
+               window.location.href = '<?= url_to('divisi.delete') ?>?id=' + id
+            }
+        });
+    }
+</script>
 
 <?= $this->endSection() ?>
