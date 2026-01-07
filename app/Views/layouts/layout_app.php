@@ -40,5 +40,6 @@
     <script src="<?= base_url('assets/js/overlayscrollbars.browser.es6.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/adminlte.min.js') ?>"></script>
+    <script src="<?= base_url('assets/js/sweetalert2.js') ?>"></script>
 </body>
 </html>
