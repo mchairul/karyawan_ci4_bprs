@@ -3,16 +3,10 @@
   <!--begin::Sidebar Brand-->
   <div class="sidebar-brand">
     <!--begin::Brand Link-->
-    <a href="./index.html" class="brand-link">
-      <!--begin::Brand Image-->
-      <img
-        src="./assets/img/AdminLTELogo.png"
-        alt="AdminLTE Logo"
-        class="brand-image opacity-75 shadow"
-      />
-      <!--end::Brand Image-->
+    <a href="<?= url_to('divisi.list') ?>" class="brand-link">
+
       <!--begin::Brand Text-->
-      <span class="brand-text fw-light">AdminLTE 4</span>
+      <span class="brand-text fw-light">Karyawan</span>
       <!--end::Brand Text-->
     </a>
     <!--end::Brand Link-->
@@ -30,11 +24,11 @@
         data-accordion="false"
         id="navigation"
       >
-        <li class="nav-header">DOCUMENTATIONS</li>
+        <!-- <li class="nav-header">DOCUMENTATIONS</li> -->
         <li class="nav-item">
-          <a href="./docs/introduction.html" class="nav-link">
-            <i class="nav-icon bi bi-download"></i>
-            <p>Installation</p>
+          <a href="<?= url_to('divisi.list') ?>" class="nav-link">
+            <i class="nav-icon bi bi-view-list"></i>
+            <p>Divisi</p>
           </a>
         </li>
       </ul>

@@ -12,7 +12,7 @@
     <div class="app-wrapper">
 
         <!-- include nav -->
-        <?= $this->include('layouts/nav_app.php') ?>
+        <?= $this->include('layouts/app_nav.php') ?>
 
         <!-- include aside -->
         <?= $this->include('layouts/aside.php') ?>

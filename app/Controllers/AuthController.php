@@ -41,6 +41,14 @@ class AuthController extends BaseController
             'nama' => $getUser['nama']
         ];
 
-        session()->set($dataSession);
+        session()->set($dataSession);   
+
+        return redirect()->to(url_to('divisi.list'));
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to(url_to('logout'));
     }
 }
