@@ -41,5 +41,22 @@
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/adminlte.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/sweetalert2.js') ?>"></script>
+    <script>
+        <?php if (session()->getFlashdata('pesan_sukses')): ?>
+        var pesanSukses = '<?=  session()->getFlashdata('pesan_sukses') ?>'
+        <?php else: ?>
+        var pesanSukses = ''
+        <?php endif ?>
+
+        // check di js apakah variable pesanSukses ada atau tidak kosong
+        if (pesanSukses != '') {
+            Swal.fire({
+                title: "Sukses!",
+                text: pesanSukses,
+                icon: "success"
+            });
+        }
+    </script>
+    <?= $this->renderSection('js') ?>
 </body>
 </html>
